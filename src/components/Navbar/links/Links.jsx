@@ -1,8 +1,9 @@
-"use client"
-import Link from "next/link";
+import NavLink from "./navLink/NavLink";
 import React from "react";
+import Styles from '../navbar.module.css'
 
 export default function Links() {
+
   let routes = [
     {
       title: "Home",
@@ -14,24 +15,35 @@ export default function Links() {
     },
     {
       title: "Blog",
-      path: "blog",
+      path: "/blog",
     },
     {
       title: "Contact",
       path: "/contact",
     },
-    {
-      title: "Login",
-      path: "/login",
-    },
+
+
   ];
+
+  // TEMPORARY
+  const session = true;
+  const isAdmin = false;
+
   return (
-    <div>
-      {routes.map((route) => (
-        <Link key={route.title} href={route.path}>
-          {route.title}
-        </Link>
+    <div className={Styles.navLinks}>
+      {routes.map((route, idx) => 
+      (
+        <NavLink key={idx} route={route}/>
       ))}
+      {session ? (
+        <>
+        {isAdmin && <NavLink route={{title: 'Admin', path: '/admin'}} />}
+        <button className={Styles.signoutBtn}>Sign Out</button>
+        </>
+      ) : (
+        <NavLink path={{title: 'Login', path: '/login'}}/>
+      )
+    }
     </div>
   );
 }

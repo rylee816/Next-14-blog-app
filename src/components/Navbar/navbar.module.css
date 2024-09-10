@@ -1,0 +1,50 @@
+  
+  .Navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.048), rgb(12, 6, 99), rgba(0, 0, 0, 0.048));
+    height: 60px;
+  
+    .brand {
+      min-width: 100px;
+    }
+  
+    .navLinks {
+      display: flex;
+      gap: 10px;
+      justify-content: space-around;
+      color: white;
+    }
+
+    .navLinks > a, .navLinks > .signoutBtn {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100px;
+      height: 35px;
+    }
+
+    .active {
+      color: var(--bg);
+      background-color: var(--text);
+      border-radius: 20px;
+    }
+
+    .signoutBtn {
+      outline: none;
+      border: none;
+      margin-left: 20px;
+      border-radius: 5px;
+      background-color: var(--bg);
+      color: var(--text);
+      font-size: 1rem;
+      font-family: "__Inter_36bd41", "__Inter_Fallback_36bd41";
+    }
+    
+    .signoutBtn:hover {
+      background-color: var(--text);
+      color: var(--bg);
+    }
+  }
