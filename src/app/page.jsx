@@ -6,9 +6,13 @@ const Home = async () => {
         <div className={`wrapper ${Styles.home}`}>
             <div className={Styles.textContainer}>
                 <h1 className={Styles.title}>Sir Bizzle VSP Creative.</h1>
-                <p>
-                    Excepteur sint occaecat cupidatat non proident, sunt in
-                    culpa qui officia deserunt mollit anim id est laborum.
+                <p className={Styles.intro}>
+                    Unlock the potential of your online presence with a creative
+                    web developer who blends innovative design with cutting-edge
+                    technology. From eye-catching visuals to seamless user
+                    experiences, I craft websites that not only captivate but
+                    also convert. Let’s turn your vision into a stunning digital
+                    reality.
                 </p>
                 <div className={Styles.homeButtons}>
                     <button className={Styles.homeBtn}>Learn More</button>

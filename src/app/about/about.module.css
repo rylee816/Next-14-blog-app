@@ -38,6 +38,10 @@
         padding: 0 1rem;
     }
 
+    .introText {
+        line-height: 25px;
+    }
+
     .box {
         display: flex;
         flex-direction: column;

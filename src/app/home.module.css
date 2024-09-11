@@ -21,6 +21,10 @@
         flex: 1;
     }
 
+    .intro {
+        line-height: 25px;
+    }
+
     .homeButtons{
         display: flex;
         gap: 20px;

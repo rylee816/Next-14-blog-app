@@ -11,26 +11,28 @@ export default function About() {
                     Bolder, better ideas that help bring value to the digital
                     world.
                 </div>
-                <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Corporis aut adipisci magni nesciunt necessitatibus
-                    asperiores facere nemo delectus corrupti optio rem, odit
-                    velit! Veritatis inventore voluptas numquam, enim nostrum
-                    fugit.
+                <p className={Styles.introText}>
+                    At the heart of my web development approach is a commitment
+                    to collaboration and innovation. I believe that the best
+                    solutions emerge from working closely with clients,
+                    understanding their unique needs, and blending their vision
+                    with creative expertise. Together, we’ll push the boundaries
+                    of design and technology to create a website that stands out
+                    and delivers exceptional results.
                 </p>
                 <div className={Styles.boxes}>
-                  <div className={Styles.box}>
-                    <h3>5+</h3>
-                    <p>Years of experience</p>
-                  </div>
-                  <div className={Styles.box}>
-                    <h3>10.5 K+</h3>
-                    <p>Unfinished projects</p>
-                  </div>
-                  <div className={Styles.box}>
-                    <h3>210 K+</h3>
-                    <p>GitHub Repos</p>
-                  </div>
+                    <div className={Styles.box}>
+                        <h3>5+</h3>
+                        <p>Years of experience</p>
+                    </div>
+                    <div className={Styles.box}>
+                        <h3>10.5 K+</h3>
+                        <p>Unfinished projects</p>
+                    </div>
+                    <div className={Styles.box}>
+                        <h3>210 K+</h3>
+                        <p>GitHub Repos</p>
+                    </div>
                 </div>
             </div>
             <div className={Styles.imageContainer}>
