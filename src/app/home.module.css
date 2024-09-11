@@ -50,9 +50,13 @@
         width: 500px;
     }
 
-    @media screen and (max-width: 1200px) {
+    @media screen and (max-width: 1242px) {
         .imageContainer {
             display: none;
+        }
+
+        .textContainer .title {
+            font-size: 4rem;
         }
     }
 }

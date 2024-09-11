@@ -8,7 +8,21 @@
     border-radius: 5px;
 
     .brand {
-        min-width: 100px;
+        position: relative;
+        display: flex;
+        top: 10px;
+        align-items: center;
+        justify-content: center;
+        height: 65px;
+        width: 60px;
+        overflow: hidden;
+    }
+
+    .image {
+      height: 100%;
+      width: 100%;
+      position: absolute;
+      bottom: -20px;
     }
 
     .navLinks {
