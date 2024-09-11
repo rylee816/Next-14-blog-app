@@ -3,9 +3,11 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 1rem;
-    background: linear-gradient(to right, rgba(0, 0, 0, 0.048), rgb(12, 6, 99), rgba(0, 0, 0, 0.048));
+    padding: 2rem;
+    background: rgb(44, 6, 99);
     height: 60px;
+    border-radius: 5px;
+    /* position: relative; */
   
     .brand {
       min-width: 100px;
@@ -18,7 +20,7 @@
       color: white;
     }
 
-    .navLinks > a, .navLinks > .signoutBtn {
+    .navLinks > a, .navLinks > .signoutBtn, .mobileLinks > a, .mobileLinks > .signoutBtn {
       display: flex;
       justify-content: center;
       align-items: center;
@@ -35,7 +37,6 @@
     .signoutBtn {
       outline: none;
       border: none;
-      margin-left: 20px;
       border-radius: 5px;
       background-color: var(--bg);
       color: var(--text);
@@ -46,5 +47,29 @@
     .signoutBtn:hover {
       background-color: var(--text);
       color: var(--bg);
+    }
+
+    .mobileLinks{
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      gap: 20px;
+      outline: 1px solid red;
+      position: absolute;
+      right: -100%;
+      width: 50%;
+      transition: all .5s linear;
+    }
+
+    @media screen and (max-width: 1024px){
+      .navLinks {
+        /* display: none; */
+      }
+
+      .mobileLinks {
+        right: 0;
+      }
     }
   }
