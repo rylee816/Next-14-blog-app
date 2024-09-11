@@ -1,0 +1,54 @@
+.home {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    gap: 100px;
+
+    .textContainer {
+        display: flex;
+        flex-direction: column;
+        flex: 1;
+        gap: 40px;
+        .title {
+            font-size: 7rem;
+        }
+    }
+    
+    .imageContainer {
+        position: relative;
+        height: 500px;
+        flex: 1;
+    }
+
+    .homeButtons{
+        display: flex;
+        gap: 20px;
+    }
+
+    .homeBtn:first-of-type {
+        background-color: var(--btn);
+        color: var(--text)
+    }
+
+    .homeBtn {
+        width: 120px;
+        padding: 1rem 0rem;
+        font-weight: bold;
+        outline: none;
+        border: none;
+        cursor: pointer;
+    }
+
+    .iconContainer {
+        position: relative;
+        height: 50px;
+        width: 500px;
+    }
+
+    @media screen and (max-width: 1200px) {
+        .imageContainer {
+            display: none;
+        }
+    }
+}

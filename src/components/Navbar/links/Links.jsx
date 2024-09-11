@@ -2,6 +2,7 @@
 import NavLink from "./navLink/NavLink";
 import React, { useState } from "react";
 import Styles from "../navbar.module.css";
+import Image from "next/image";
 
 let routes = [
   {
@@ -44,7 +45,9 @@ export default function Links() {
           <NavLink path={{ title: "Login", path: "/login" }} />
         )}
       </div>
-      <button onClick={() => setIsOpen(!isOpen)}>Menu</button>
+      <div className={Styles.menuButton} onClick={() => setIsOpen(!isOpen)}>
+        <Image src={'/menu.png'} fill/>
+      </div>
       {isOpen && (
         <div className={isOpen && Styles.mobileLinks}>
           {routes.map((route, idx) => (

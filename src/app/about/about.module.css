@@ -1,0 +1,54 @@
+.about {
+    display: flex;
+    gap: 50px;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+
+    .textContainer {
+        display: flex;
+        flex-direction: column;
+        flex: 1;
+        gap: 40px;
+    }
+
+    .header {
+        font-size: 4rem;
+    }
+
+    .title {
+        color: var(--btn)
+    }
+
+    .imageContainer {
+        position: relative;
+        height: 500px;
+        flex: 1;
+    }
+
+    .img {
+        width: 500px;
+        height: 500px;
+    }
+
+    .boxes {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 1rem;
+    }
+
+    .box {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+    }
+
+    .box h3 {
+        color: var(--btn)
+    }
+
+    .box p {
+        font-size: .8rem;
+    }
+}

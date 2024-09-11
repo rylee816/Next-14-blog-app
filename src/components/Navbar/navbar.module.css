@@ -1,75 +1,93 @@
-  
-  .Navbar {
+.Navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 2rem;
+    padding: 2rem 3rem;
     background: rgb(44, 6, 99);
     height: 60px;
     border-radius: 5px;
-    /* position: relative; */
-  
+
     .brand {
-      min-width: 100px;
-    }
-  
-    .navLinks {
-      display: flex;
-      gap: 10px;
-      justify-content: space-around;
-      color: white;
+        min-width: 100px;
     }
 
-    .navLinks > a, .navLinks > .signoutBtn, .mobileLinks > a, .mobileLinks > .signoutBtn {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      width: 100px;
-      height: 35px;
+    .navLinks {
+        display: flex;
+        gap: 10px;
+        justify-content: space-around;
+        color: white;
+    }
+
+    .navLinks > a,
+    .navLinks > .signoutBtn,
+    .mobileLinks > a,
+    .mobileLinks > .signoutBtn {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100px;
+        height: 35px;
     }
 
     .active {
-      color: var(--bg);
-      background-color: var(--text);
-      border-radius: 20px;
+        color: var(--bg);
+        background-color: var(--text);
+        border-radius: 20px;
     }
 
     .signoutBtn {
-      outline: none;
-      border: none;
-      border-radius: 5px;
-      background-color: var(--bg);
-      color: var(--text);
-      font-size: 1rem;
-      font-family: "__Inter_36bd41", "__Inter_Fallback_36bd41";
+        outline: none;
+        border: none;
+        border-radius: 5px;
+        background-color: var(--bg);
+        color: var(--text);
+        font-size: 1rem;
+        font-family: '__Inter_36bd41', '__Inter_Fallback_36bd41';
     }
-    
+
     .signoutBtn:hover {
-      background-color: var(--text);
-      color: var(--bg);
+        background-color: var(--text);
+        color: var(--bg);
     }
 
-    .mobileLinks{
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-      gap: 20px;
-      outline: 1px solid red;
-      position: absolute;
-      right: -100%;
-      width: 50%;
-      transition: all .5s linear;
+    .mobileLinks {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: calc(100vh - 70px);
+        gap: 20px;
+        position: absolute;
+        right: -100%;
+        top: 64px;
+        background: rgb(44, 6, 99);
+        width: 50%;
+        transition: all 0.5s linear;
+        z-index: 10000;
     }
 
-    @media screen and (max-width: 1024px){
-      .navLinks {
-        /* display: none; */
-      }
-
-      .mobileLinks {
-        right: 0;
-      }
+    .menuButton {
+        display: none;
+        position: relative;
+        width: 25px;
+        height: 25px;
     }
-  }
+
+    @media screen and (max-width: 1024px) {
+        .navLinks:first-child {
+            display: none;
+        }
+
+        .mobileLinks {
+            right: 0;
+            display: flex;
+            opacity: 1;
+            transition: all 0.5s linear;
+        }
+
+        .menuButton {
+            display: block;
+            cursor: pointer;
+        }
+    }
+}

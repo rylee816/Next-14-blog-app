@@ -17,14 +17,19 @@ body {
   color: var(--text);
 }
 
+.wrapper {
+    padding: 2rem;
+    height: 100vh;
+}
+
 .container {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: center;
   max-width: 1536px;
-  min-height: 100vh;
+  height: calc(100vh - 100px);
   margin: auto;
-  padding: 0 2rem;
+  padding: 2rem;
 }
 
 a {
