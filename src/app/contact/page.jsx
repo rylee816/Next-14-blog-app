@@ -7,7 +7,7 @@ export default function Contact() {
   return (
     <div className={Styles.contact}>
       <div className={Styles.imageContainer}>
-        <Image className={Styles.img} src='/contact.png' fill alt="" />
+        <Image className={Styles.image} src='/contact.png' fill alt="" />
       </div>
       <div className={Styles.formContainer}>
         <ContactForm /> 

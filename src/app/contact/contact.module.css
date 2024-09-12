@@ -7,7 +7,7 @@
         flex:1;
         height: 500px;
 
-        .img {
+        .image {
             object-fit: contain;
         }
     }

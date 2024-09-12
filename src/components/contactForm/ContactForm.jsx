@@ -16,7 +16,7 @@ export default function ContactForm() {
                 />
                 <input
                     className={Styles.input}
-                    type="text"
+                    type="email"
                     id="email"
                     name="email"
                     // value={'email'}
