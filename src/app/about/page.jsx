@@ -36,7 +36,7 @@ export default function About() {
                 </div>
             </div>
             <div className={Styles.imageContainer}>
-                <Image src="/about.png" fill />
+                <Image className={Styles.img} src="/about.png" fill alt="" />
             </div>
         </div>
     )

@@ -19,11 +19,11 @@ const Home = async () => {
                     <button className={Styles.homeBtn}>Contact</button>
                 </div>
                 <div className={Styles.iconContainer}>
-                    <Image src="/brands.png" fill />
+                    <Image src="/brands.png" fill alt="" />
                 </div>
             </div>
             <div className={Styles.imageContainer}>
-                <Image src="/hero.gif" fill />
+                <Image className={Styles.img} src="/hero.gif" fill alt="" />
             </div>
         </div>
     )

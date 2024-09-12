@@ -24,11 +24,13 @@
         position: relative;
         height: 500px;
         flex: 1;
+        max-width: 50%;
     }
 
     .img {
-        width: 500px;
-        height: 500px;
+        /* width: 500px;
+        height: 500px; */
+        object-fit: contain;
     }
 
     .boxes {
@@ -54,5 +56,21 @@
 
     .box p {
         font-size: .8rem;
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    .about {
+        flex-direction: column;
+    }
+
+    .imageContainer {
+       display: none;
+    }
+
+    .textContainer {
+        height: 100vh;
+        justify-content: space-around;
+        padding: 1rem 0;
     }
 }

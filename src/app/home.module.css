@@ -21,6 +21,10 @@
         flex: 1;
     }
 
+    .img {
+        object-fit: contain;
+    }
+
     .intro {
         line-height: 25px;
     }
