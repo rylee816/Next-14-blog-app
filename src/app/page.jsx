@@ -1,5 +1,6 @@
 import Image from 'next/image'
 import Styles from './home.module.css'
+import Link from 'next/link'
 const Home = async () => {
     // await new Promise(res => setTimeout(res, 3000))
     return (
@@ -15,8 +16,16 @@ const Home = async () => {
                     reality.
                 </p>
                 <div className={Styles.homeButtons}>
-                    <button className={Styles.homeBtn}>Learn More</button>
-                    <button className={Styles.homeBtn}>Contact</button>
+                    <Link href="/about">
+                        <button
+                            className={`${Styles.homeBtn} ${Styles.learnMore}`}
+                        >
+                            Learn More
+                        </button>
+                    </Link>
+                    <Link href="/contact">
+                        <button className={Styles.homeBtn}>Contact</button>
+                    </Link>
                 </div>
                 <div className={Styles.iconContainer}>
                     <Image src="/brands.png" fill alt="" />

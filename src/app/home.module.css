@@ -34,11 +34,6 @@
         gap: 20px;
     }
 
-    .homeBtn:first-of-type {
-        background-color: var(--btn);
-        color: var(--text)
-    }
-
     .homeBtn {
         width: 120px;
         padding: 1rem 0rem;
@@ -46,6 +41,11 @@
         outline: none;
         border: none;
         cursor: pointer;
+    }
+
+    .learnMore {
+        background-color: var(--btn);
+        color: var(--text)
     }
 
     .iconContainer {
