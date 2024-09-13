@@ -20,7 +20,7 @@ export default function PostCard() {
             <div className={Styles.body}>
                 <h4>Test title</h4>
                 <p>Description</p>
-                <Link href="/">See More</Link>
+                <Link href="/blog/post">See More</Link>
             </div>
         </div>
     )
