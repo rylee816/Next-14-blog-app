@@ -5,7 +5,7 @@ import ContactForm from '@/components/contactForm/ContactForm'
 
 export default function Contact() {
   return (
-    <div className={Styles.contact}>
+    <div className={`wrapper ${Styles.contact}`}>
       <div className={Styles.imageContainer}>
         <Image className={Styles.image} src='/contact.png' fill alt="" />
       </div>

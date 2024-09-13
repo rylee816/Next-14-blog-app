@@ -27,7 +27,7 @@ body {
   flex-direction: column;
   justify-content: center;
   max-width: 1536px;
-  height: calc(100vh - 100px);
+  min-height: calc(100vh - 100px);
   margin: auto;
   padding: 2rem;
 }

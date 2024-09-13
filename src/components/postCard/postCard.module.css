@@ -3,8 +3,10 @@
     position: relative;
     flex-direction: column;
     border-radius: 5px;
-    border: 2px solid var(--bg-soft);
+    /* border: 2px solid var(--bg-soft); */
+    border: 4px solid black;
     flex: 1;
+    transition: all .3s ease-in-out;
 
     .imageContainer {
         display: flex;
@@ -22,9 +24,13 @@
         justify-content: space-between;
     }
 
+    .top span {
+        background-color: rgb(20, 19, 19);
+        /* background-color: var(--bg-soft); */
+    }
+
     .img {
-        object-fit: contain;
-        /* object-fit: cover; */
+        object-fit: cover;
     }
 
     .date {
@@ -43,11 +49,19 @@
         height: 100%;
         padding: 1rem;
         background-color: var(--bg-soft);
+        background-color: black;
+        background-color: transparent;
         justify-content: center;
         align-items: start;
-
     }
+
     .body > a {
         color: var(--btn)
     }
+
 }
+/* .postCard:hover .imageContainer, .postCard:hover {
+    transform: translate(-2px, -2px);
+    box-shadow: 2px 5px 12px white;
+    transition: all .3s linear;
+} */

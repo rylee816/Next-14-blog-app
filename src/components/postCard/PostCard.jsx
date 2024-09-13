@@ -10,12 +10,12 @@ export default function PostCard() {
                 <div className={Styles.imageContainer}>
                     <Image
                         className={Styles.img}
-                        src="/about.png"
+                        src="https://images.pexels.com/photos/1199957/pexels-photo-1199957.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
                         alt=""
                         fill
                     />
                 </div>
-                <span className={Styles.date}>9.12.24</span>
+                <span className={Styles.date}>9/13/24</span>
             </div>
             <div className={Styles.body}>
                 <h4>Test title</h4>
