@@ -19,8 +19,8 @@ export default function PostCard() {
             </div>
             <div className={Styles.body}>
                 <h4>Test title</h4>
-                <p>Description</p>
-                <Link href="/blog/post">See More</Link>
+                <p className={Styles.description}>Description Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis magni vitae, ex perferendis omnis atque! Modi porro enim quibusdam sed, libero ratione laudantium officia eligendi tempora, placeat ducimus impedit voluptates.</p>
+                <Link href="/blog/slug">See More</Link>
             </div>
         </div>
     )
