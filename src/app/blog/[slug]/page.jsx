@@ -6,7 +6,7 @@ export default function ViewPost({ params }) {
     const post = params.slug
     return (
         <div className={`wrapper ${Styles.viewPost}`}>
-            <div className={Styles.imageContainer}>
+            <div className={Styles.imgContainer}>
                 <Image
                     src="https://images.pexels.com/photos/1199957/pexels-photo-1199957.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
                     alt=""

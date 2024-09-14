@@ -5,23 +5,23 @@
     /* outline: 1px solid red; */
 }
 
-.imageContainer {
+.imgContainer {
     position: relative;
-    height: 700px;
+    min-height: 700px;
     flex: 1;
-    width: 700px;
+    min-width: 500px;
 }
 
-.imContainer img {
+.imgContainer img {
     object-fit: cover;
 }
 
 .textContainer {
     display: flex;
     flex-direction: column;
-    flex: 1;
+    flex: 2;
     gap: 2rem;
-    width: 700px;
+    min-width: 700px;
 }
 
 .userInfo {
@@ -62,4 +62,25 @@
 
 .text > p{
     margin-bottom: 1rem;
+}
+
+@media screen and (max-width: 768px) {
+    .imgContainer {
+        height: 300px;
+        min-width: 300px;
+        /* width: 100vw; */
+        min-height: 0;
+    }
+    
+    .imgContainer img {
+        min-width: 300px;
+        height: 300px;
+        object-fit: cover;
+    }
+
+    .textContainer {
+        flex: 1;
+        gap: 2rem;
+        min-width: 320px;
+    }
 }
