@@ -2,27 +2,18 @@ import React, {Suspense} from 'react'
 import Styles from './viewPost.module.css'
 import Image from 'next/image'
 import PostUser from '@/components/PostUser/PostUser'
+import { getPost } from '@/lib/data'
 
-async function getPostData(slug) {
-    try {
-        const res = await fetch(
-            `https://jsonplaceholder.typicode.com/posts/${slug}`
-        )
-        return res.json()
-    } catch (err) {
-        throw new Error('Error retrieving post')
-    }
-}
 
 export default async function ViewPost({ params }) {
     const { slug } = params
-    const post = await getPostData(slug)
+    const post= await getPost(slug)
 
     return (
         <div className={`wrapper ${Styles.viewPost}`}>
             <div className={Styles.imgContainer}>
                 <Image
-                    src="https://images.pexels.com/photos/1199957/pexels-photo-1199957.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+                    src={post?.image && post.image}
                     alt=""
                     fill
                 />
@@ -32,7 +23,7 @@ export default async function ViewPost({ params }) {
                 <Suspense fallback={"...Loading"}>
                     <PostUser userId={post.userId} />
                 </Suspense>
-                <p className={Styles.text}>{post.body.repeat(20)}</p>
+                <p className={Styles.text}>{post.body}</p>
             </div>
         </div>
     )

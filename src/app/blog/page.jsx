@@ -1,18 +1,11 @@
 import React from 'react'
 import Styles from './blog.module.css'
 import PostCard from '@/components/postCard/PostCard'
+import {getPosts} from '../../lib/data'
 
-async function getData(){
-  try {
-    const res = await fetch('https://jsonplaceholder.typicode.com/posts')
-    return res.json()
-  } catch(err){
-    throw new Error("Error retrieving posts")
-  }
-}
 
 export default async function Blog() {
- const posts = await getData()
+ const posts = await getPosts()
 
   return (
     <div className={`wrapper ${Styles.blog}`}>

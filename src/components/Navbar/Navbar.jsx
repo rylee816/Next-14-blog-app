@@ -9,7 +9,7 @@ export default function Navbar() {
     <div className={Styles.Navbar}>
       <div className={Styles.brand}>
         <Link href="/">
-          <Image className={Styles.image} src='/woozleimage.png' fill alt="woozle" />
+          <Image className={Styles.image} src='/woozleimage.png' fill alt="woozle" priority={true} sizes={'100%'}/>
         </Link>
       </div>
       <div className={Styles.navLinks}>

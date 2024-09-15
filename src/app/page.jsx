@@ -6,7 +6,7 @@ import { getPosts } from '@/lib/data'
 
 const Home = async () => {
     // await new Promise(res => setTimeout(res, 3000))
-    await getPosts()
+    await getPosts('66e7460594a8f3253e6cc337').then(data => console.log(data))
 
     return (
         <div className={`wrapper ${Styles.home}`}>

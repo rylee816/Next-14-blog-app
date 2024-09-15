@@ -24,7 +24,7 @@ const userSchema = new mongoose.Schema(
             min: 6,
             unique: true,
         },
-        img: {
+        image: {
             type: String,
         },
         isAdmin: {

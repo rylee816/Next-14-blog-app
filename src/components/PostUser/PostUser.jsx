@@ -1,29 +1,19 @@
 import React from 'react'
 import Image from 'next/image'
 import Styles from './postUser.module.css'
-
-async function getUserData(userId) {
-    try {
-        const res = await fetch(
-            `https://jsonplaceholder.typicode.com/users/${userId}`
-        )
-        return res.json()
-    } catch (err) {
-        throw new Error("Error retrieving user")
-    }
-}
+import { getUser } from '@/lib/data'
 
 export default async function PostUser({userId}) {
     // await new Promise(res => setTimeout(res, 3000))
-    const user = await getUserData(userId)
-
+    const user = await getUser(userId)
     return (
         <div className={Styles.userInfo}>
             <div className={Styles.userPhoto}>
                 <Image
-                    src="https://images.pexels.com/photos/1199957/pexels-photo-1199957.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+                    src={user.image ? user.image : 'https://images.pexels.com/photos/3683107/pexels-photo-3683107.jpeg?auto=compress&cs=tinysrgb&w=800'}
                     alt=""
                     fill
+                    sizes="100%"
                 />
             </div>
             <div className={Styles.userName}>
@@ -32,7 +22,7 @@ export default async function PostUser({userId}) {
             </div>
             <div className={Styles.date}>
                 <p>Date Posted</p>
-                <h4>9/13/2024</h4>
+                <h4>{new Date(Date.parse(user.createdAt)).toLocaleDateString('en-US')}</h4>
             </div>
         </div>
     )
