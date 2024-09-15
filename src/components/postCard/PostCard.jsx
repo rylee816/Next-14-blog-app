@@ -3,14 +3,26 @@ import Styles from './postCard.module.css'
 import Image from 'next/image'
 import Link from 'next/link'
 
-export default function PostCard() {
+async function getData(id){
+    try {
+      const res = await fetch(`https://jsonplaceholder.typicode.com/photos?albumId=${id}`)
+      return res.json()
+    } catch(err){
+      throw new Error("Error retrieving posts")
+    }
+  }
+
+export default async function PostCard({ post }) {
+    const image = await getData(post.id)
+    // const url = image.find(post.id)
+    console.log(image)
     return (
         <div className={Styles.postCard}>
             <div className={Styles.top}>
                 <div className={Styles.imageContainer}>
                     <Image
                         className={Styles.img}
-                        src="https://images.pexels.com/photos/1199957/pexels-photo-1199957.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+                        src={image[0].url}
                         alt=""
                         fill
                     />
@@ -18,9 +30,11 @@ export default function PostCard() {
                 <span className={Styles.date}>9/13/24</span>
             </div>
             <div className={Styles.body}>
-                <h4>Test title</h4>
-                <p className={Styles.description}>Description Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis magni vitae, ex perferendis omnis atque! Modi porro enim quibusdam sed, libero ratione laudantium officia eligendi tempora, placeat ducimus impedit voluptates.</p>
-                <Link href="/blog/slug">See More</Link>
+                <div className={Styles.titleContainer}>
+                    <h4>{post.title}</h4>
+                </div>
+                <p className={Styles.description}>{post.body}</p>
+                <Link href={`/blog/${post.id}`}>See More</Link>
             </div>
         </div>
     )

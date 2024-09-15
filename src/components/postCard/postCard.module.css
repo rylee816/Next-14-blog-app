@@ -3,8 +3,6 @@
     position: relative;
     flex-direction: column;
     border-radius: 5px;
-    /* border: 2px solid var(--bg-soft); */
-    /* border: 4px solid black; */
     flex: 1;
     transition: all .3s ease-in-out;
 
@@ -56,6 +54,18 @@
         align-items: start;
     }
 
+    .titleContainer {
+        width: 90%;
+    }
+
+    .titleContainer h4 {
+        display: -webkit-box;
+        line-clamp: 1;
+        -webkit-line-clamp: 1;
+        -webkit-box-orient: vertical;  
+        overflow: hidden;
+    }
+
     .body > a {
         color: var(--btn);
         text-decoration: underline;
@@ -71,7 +81,7 @@
         -webkit-box-orient: vertical;  
         overflow: hidden;
         width: 90%;
-        height: 40px;
+        height: 45px;
     }
 
 }

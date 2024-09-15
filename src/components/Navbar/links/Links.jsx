@@ -46,7 +46,7 @@ export default function Links() {
         )}
       </div>
       <div className={Styles.menuButton} onClick={() => setIsOpen(!isOpen)}>
-        <Image src={'/menu.png'} fill/>
+        <Image src={'/menu.png'} alt="" fill/>
       </div>
       {isOpen && (
         <div className={isOpen && Styles.mobileLinks}>

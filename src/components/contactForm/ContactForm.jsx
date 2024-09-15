@@ -1,8 +1,16 @@
 'use client'
 import React from 'react'
 import Styles from './contactForm.module.css'
+import { useRouter } from 'next/navigation'
 
-export default function ContactForm() {
+export default function ContactForm() {    
+    const router = useRouter()
+
+    const handleClick = (e) => {
+        // e.preventDefault()
+        console.log("hello")
+    }
+
     return (
         <div className={Styles.contact}>
             <form className={Styles.contactForm} action={() => null}>
@@ -40,7 +48,7 @@ export default function ContactForm() {
                 />
             </form>
             <div className={Styles.submitBtn}>
-                <button className={Styles.btn}>Send</button>
+                <button onClick={handleClick} className={Styles.btn}>Send</button>
             </div>
         </div>
     )

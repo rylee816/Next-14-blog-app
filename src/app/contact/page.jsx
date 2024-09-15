@@ -3,7 +3,7 @@ import Styles from './contact.module.css'
 import Image from 'next/image'
 import ContactForm from '@/components/contactForm/ContactForm'
 
-export default function Contact() {
+export default function Contact() {  
   return (
     <div className={`wrapper ${Styles.contact}`}>
       <div className={Styles.imageContainer}>
