@@ -1,12 +1,10 @@
 import Image from 'next/image'
 import Styles from './home.module.css'
 import Link from 'next/link'
-import { getPosts } from '@/lib/data'
 
 
 const Home = async () => {
     // await new Promise(res => setTimeout(res, 3000))
-    await getPosts('66e7460594a8f3253e6cc337').then(data => console.log(data))
 
     return (
         <div className={`wrapper ${Styles.home}`}>

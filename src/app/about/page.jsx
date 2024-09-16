@@ -2,6 +2,11 @@ import React from 'react'
 import Image from 'next/image'
 import Styles from './about.module.css'
 
+export const metadata = {
+    title: "About Page",
+    description: "Randy Riley's Web Developer About Page",
+  };
+
 export default function About() {
     return (
         <div className={Styles.about}>

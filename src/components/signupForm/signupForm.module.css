@@ -1,8 +1,8 @@
-.contact {
-    
+.signup {
+
 }
 
-.contactForm {
+.signupForm {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -35,8 +35,8 @@
 
 .submitBtn {
     display: flex;
-    flex: 1;
     width: 100%;
+    flex: 1;
 }
 
 .btn {
