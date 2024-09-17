@@ -22,7 +22,7 @@ export default async function ViewPost({ params }) {
         <div className={`wrapper ${Styles.viewPost}`}>
             <div className={Styles.imgContainer}>
                 <Image
-                    src={post?.image && post.image}
+                    src={post.image || 'https://images.pexels.com/photos/3937174/pexels-photo-3937174.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2'}
                     alt=""
                     fill
                 />

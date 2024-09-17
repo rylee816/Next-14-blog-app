@@ -1,16 +1,9 @@
 'use client'
 import React from 'react'
 import Styles from './signupForm.module.css'
-import { useRouter } from 'next/navigation'
 import { createUser } from '@/lib/actions'
 
 export default function SignupForm() {
-    const router = useRouter()
-
-    const handleClick = (e) => {
-        // e.preventDefault()
-        console.log('hello')
-    }
 
     return (
         <div className={Styles.signup}>
