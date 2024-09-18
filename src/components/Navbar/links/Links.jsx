@@ -28,8 +28,6 @@ let routes = [
 export default function Links({ session }) {
     const [isOpen, setIsOpen] = useState(false)
 
-    console.log(session)
-
     return (
         <div>
             <div className={Styles.navLinks}>
