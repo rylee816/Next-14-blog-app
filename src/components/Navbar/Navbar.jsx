@@ -3,8 +3,11 @@ import React from "react";
 import Links from "./links/Links";
 import Styles from './navbar.module.css'
 import Image from "next/image";
+import { auth } from "@/lib/auth";
 
-export default function Navbar() {
+export default async function Navbar() {
+  const session = await auth();
+
   return (
     <div className={Styles.Navbar}>
       <div className={Styles.brand}>
@@ -13,7 +16,7 @@ export default function Navbar() {
         </Link>
       </div>
       <div className={Styles.navLinks}>
-        <Links />
+        <Links session={session}/>
       </div>
     </div>
   );

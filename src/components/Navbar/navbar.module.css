@@ -49,6 +49,13 @@
         border-radius: 20px;
     }
 
+    .logoutForm {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100px;
+    }
+
     .signoutBtn {
         outline: none;
         border: none;
@@ -57,6 +64,8 @@
         color: var(--text);
         font-size: 1rem;
         font-family: '__Inter_36bd41', '__Inter_Fallback_36bd41';
+        width: 100%;
+        height: 100%;
     }
 
     .signoutBtn:hover {

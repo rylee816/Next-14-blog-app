@@ -1,3 +1,9 @@
+.welcome {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
 .home {
     display: flex;
     justify-content: center;
@@ -14,7 +20,7 @@
             font-size: 7rem;
         }
     }
-    
+
     .imageContainer {
         position: relative;
         height: 500px;
@@ -29,7 +35,7 @@
         line-height: 25px;
     }
 
-    .homeButtons{
+    .homeButtons {
         display: flex;
         gap: 20px;
     }
@@ -45,7 +51,7 @@
 
     .learnMore {
         background-color: var(--btn);
-        color: var(--text)
+        color: var(--text);
     }
 
     .iconContainer {
