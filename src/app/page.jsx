@@ -1,13 +1,12 @@
 import Image from 'next/image'
 import Styles from './home.module.css'
 import Link from 'next/link'
-import useSession from 'next-auth'
 import { auth } from '@/lib/auth'
 
 const Home = async () => {
     // await new Promise(res => setTimeout(res, 3000))
     const session = await auth()
-
+    console.log(session)
     return (
         <>
               {session && (

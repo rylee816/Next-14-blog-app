@@ -3,7 +3,6 @@ import NavLink from './navLink/NavLink'
 import React, { useState } from 'react'
 import Styles from '../navbar.module.css'
 import Image from 'next/image'
-import { signOut } from '@/lib/auth'
 import { handleLogout } from '@/lib/actions'
 
 let routes = [

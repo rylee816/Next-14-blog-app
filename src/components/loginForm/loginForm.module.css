@@ -1,10 +1,11 @@
-.signup {
+.loginPage {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
 }
 
-.signupForm {
+.loginForm {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -14,8 +15,7 @@
     width: 600px;
 }
 
-.input,
-.textarea {
+.input {
     width: 100%;
     padding: 1rem;
     outline: none;
@@ -35,15 +35,15 @@
     width: 100%;
 }
 
-.submitBtn {
+.loginBtn {
     display: flex;
     width: 100%;
-    flex: 1;
 }
 
 .btn {
     display: flex;
     flex: 1;
+    width: 100%;
     justify-content: center;
     align-items: center;
     outline: none;
