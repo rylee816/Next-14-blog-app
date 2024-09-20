@@ -6,7 +6,6 @@ import { auth } from '@/lib/auth'
 const Home = async () => {
     // await new Promise(res => setTimeout(res, 3000))
     const session = await auth()
-    console.log(session)
 
     return (
         <>
@@ -14,7 +13,7 @@ const Home = async () => {
                 <div className={Styles.welcome}>
                     <p
                         styles={{ color: 'white' }}
-                    >{`Welcome ${session.username}!`}</p>
+                    >{`Welcome ${session.user.username}!`}</p>
                 </div>
             )}
             <div className={`wrapper ${Styles.home}`}>

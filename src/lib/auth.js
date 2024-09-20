@@ -69,5 +69,12 @@ export const {
             }
             return true
         },
+        async session({ session, token, user }) {
+            // Make sure username is added to session
+            connectToDB()
+            user = await User.findOne({email: token.email})
+            session.user.username = user.username; 
+            return session;
+          },
     },
 })
