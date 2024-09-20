@@ -5,20 +5,28 @@ import { handleGitHubLogin } from '@/lib/actions'
 import { auth } from '@/lib/auth'
 import { redirect } from 'next/navigation'
 import LoginForm from '@/components/loginForm/LoginForm'
+import Link from 'next/link'
 
 export default async function LoginPage() {
-  // const session = await auth()
+  const session = await auth()
   
-  // if(session){
-  //   redirect('/')
-  // }
+  if(session){
+    redirect('/')
+  }
 
     return (
         <div className={`wrapper ${Styles.loginPage}`}>
-            <form action={handleGitHubLogin}>
-                <button>Sign in with GitHub</button>
+            <form className={Styles.github} action={handleGitHubLogin}>
+                <button className={Styles.githubBtn}>Sign in with GitHub</button>
             </form>
+              <div className={Styles.option}>
+                <h2 className={Styles.or}>or</h2>
+              </div>
             <LoginForm />
+            <div className={Styles.register}>
+              <p>Don't have an account?</p>
+              <Link href="/register"><i>Click Here to Register</i></Link>
+            </div>
         </div>
     )
 }

@@ -13,7 +13,7 @@ export default function About() {
             <div className={Styles.textContainer}>
                 <h2 className={Styles.title}>About Sir Bizzle</h2>
                 <div className={Styles.header}>
-                    Bolder, better ideas that help bring value to the digital
+                    <b>Bolder</b>, better ideas that help bring value to the digital
                     world.
                 </div>
                 <p className={Styles.introText}>
@@ -41,7 +41,7 @@ export default function About() {
                 </div>
             </div>
             <div className={Styles.imageContainer}>
-                <Image className={Styles.img} src="/woozleimage.png" fill alt="" />
+                <Image className={Styles.img} sizes={700} src="/woozleimage.png" fill alt="" />
             </div>
         </div>
     )

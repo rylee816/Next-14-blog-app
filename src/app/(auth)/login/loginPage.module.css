@@ -4,3 +4,39 @@
     justify-content: center;
     align-items: center;
 }
+
+.option {
+    margin-top: 20px;
+}
+
+.or {
+    font-style: italic;
+}
+
+.githubBtn {
+    width: 300px;
+    padding: 1rem;
+    background-color: var(--bg-soft);
+    border-radius: 10px;
+    border: none;
+    color: var(--text);
+    font-size: 1.2rem;
+    font-weight: bold;
+    cursor: pointer;
+    background-color: purple;
+}
+
+.register {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.register a {
+    color: var(--btn);
+    font-size: 1.2rem;
+    margin-top: 30px;
+    text-decoration: underline;
+}

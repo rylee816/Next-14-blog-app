@@ -11,9 +11,10 @@ const Home = async () => {
         <>
             {session && (
                 <div className={Styles.welcome}>
-                    <p
-                        styles={{ color: 'white' }}
-                    >{`Welcome ${session.user.username}!`}</p>
+                    <p styles={{ color: 'white' }}>{`Welcome ${
+                        session.user?.username?.charAt(0).toUpperCase() +
+                        session.user.username?.slice(1)
+                    }!`}</p>
                 </div>
             )}
             <div className={`wrapper ${Styles.home}`}>
@@ -44,7 +45,13 @@ const Home = async () => {
                     </div>
                 </div>
                 <div className={Styles.imageContainer}>
-                    <Image className={Styles.img} src="/hero.gif" fill alt="" />
+                    <Image
+                        className={Styles.img}
+                        sizes={650}
+                        src="/hero.gif"
+                        fill
+                        alt=""
+                    />
                 </div>
             </div>
         </>
