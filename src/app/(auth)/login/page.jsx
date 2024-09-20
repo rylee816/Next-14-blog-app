@@ -1,18 +1,17 @@
 
 import Styles from './loginPage.module.css'
 import React from 'react'
-import { handleGitHubLogin, login } from '@/lib/actions'
+import { handleGitHubLogin } from '@/lib/actions'
 import { auth } from '@/lib/auth'
 import { redirect } from 'next/navigation'
-// import {useFormState} from 'react-dom'
 import LoginForm from '@/components/loginForm/LoginForm'
 
 export default async function LoginPage() {
-  const session = await auth()
+  // const session = await auth()
   
-  if(session){
-    redirect('/')
-  }
+  // if(session){
+  //   redirect('/')
+  // }
 
     return (
         <div className={`wrapper ${Styles.loginPage}`}>

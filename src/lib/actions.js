@@ -4,35 +4,23 @@ import { NextResponse } from 'next/server'
 import { connectToDB } from './utils'
 import { User } from './models'
 import { revalidatePath } from 'next/cache'
-import { redirect } from 'next/navigation'
-import { auth, signIn, signOut } from './auth'
+import { signIn, signOut } from './auth'
 import bcrypt from 'bcryptjs'
 
-export const login = async(test, credentials) => {
-    'use server'
-    const {username, password} = Object.fromEntries(credentials);
-    const session = await auth()
-    console.log(session)
+
+export const login = async (prevState, formData) => {
+    const { username, password } = Object.fromEntries(formData);
     try {
-        connectToDB()
-        const user = await User.findOne({username})
-
-        if (!user) {
-            return {error: 'Incorrect username or password. Please try again'}
-        }
-
-       let validatedPassword = await bcrypt.compare(password, user.password)
-        if(!validatedPassword){
-            return {error: 'Incorrect password. Please try again'}
-        }
-        console.log(validatedPassword)
-        return {success: true}
-
-    } catch(err){
-        console.log(error)
-        return {error: 'Error logging in'}
+      await signIn("credentials", { username, password })
+    } catch (err) {
+      console.log(err);
+  
+      if (err.message.includes("CredentialsSignin")) {
+        return { error: "Invalid username or password" };
+      }
+      throw err;
     }
-}
+  };
 
 export const register
  = async (_, formData) => {
@@ -100,6 +88,7 @@ export const handleGitHubLogin = async () => {
     'use server'
     await signIn('github')
 }
+
 
 export const handleLogout = async () => {
     'use server'
