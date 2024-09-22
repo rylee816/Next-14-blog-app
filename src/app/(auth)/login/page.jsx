@@ -7,12 +7,6 @@ import LoginForm from '@/components/loginForm/LoginForm'
 import Link from 'next/link'
 
 export default async function LoginPage() {
-    const session = await auth()
-
-    if (session) {
-        redirect('/')
-    }
-
     return (
         <div className={`wrapper ${Styles.loginPage}`}>
             <form className={Styles.github} action={handleGitHubLogin}>

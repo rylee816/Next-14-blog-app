@@ -6,7 +6,7 @@ import { auth } from '@/lib/auth'
 const Home = async () => {
     // await new Promise(res => setTimeout(res, 3000))
     const session = await auth()
-
+    console.log(session)
     return (
         <>
             {session && (

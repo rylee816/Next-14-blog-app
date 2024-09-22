@@ -9,9 +9,9 @@ import { redirect } from 'next/navigation'
 
 export const generateMetadata = async ({params}) => {
   const session = await auth()
-  if(!session){
-    redirect('/')
-  }
+//   if(!session){
+//     redirect('/')
+//   }
   const {slug} = params;
   const post = await getPost(slug)
 

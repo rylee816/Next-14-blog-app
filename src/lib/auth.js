@@ -4,6 +4,7 @@ import CredentialsProvider from 'next-auth/providers/credentials'
 import { connectToDB } from './utils'
 import { User } from './models'
 import bcrypt from 'bcryptjs'
+import { authConfig } from './auth.config'
 
 export const login = async (credentials) => {
     try {
@@ -69,6 +70,8 @@ export const {
             }
             return true
         },
+    ...authConfig.callbacks,
+
         async session({ session, token, user }) {
             // Make sure username is added to session
             connectToDB()
