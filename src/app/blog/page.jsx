@@ -13,15 +13,20 @@ export const metadata = {
 
 export default async function Blog() {
  const posts = await getPosts()
- const session = await auth()
+//  const session = await auth()
 
+  // return (
+  //   session ?(
+  //   <div className={`wrapper ${Styles.blog}`}>
+  //     {posts.map(post => <PostCard key={post.id} post={post}/>)}
+  //   </div>
+  //   ) : (
+  //     <p>You must be logged in to view this page.</p>
+  //   )
+  // )
   return (
-    session ?(
-    <div className={`wrapper ${Styles.blog}`}>
+        <div className={`wrapper ${Styles.blog}`}>
       {posts.map(post => <PostCard key={post.id} post={post}/>)}
     </div>
-    ) : (
-      <p>You must be logged in to view this page.</p>
-    )
   )
 }

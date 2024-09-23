@@ -6,6 +6,7 @@ import { User } from './models'
 import bcrypt from 'bcryptjs'
 import { authConfig } from './auth.config'
 
+
 export const login = async (credentials) => {
     try {
         connectToDB()
@@ -71,13 +72,6 @@ export const {
             return true
         },
     ...authConfig.callbacks,
-
-        async session({ session, token, user }) {
-            // Make sure username is added to session
-            connectToDB()
-            user = await User.findOne({email: token.email})
-            session.user.username = user.username; 
-            return session;
-          },
     },
 })
+
