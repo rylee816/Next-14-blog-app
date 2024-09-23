@@ -1,8 +1,7 @@
 'use server'
 
-import { NextResponse } from 'next/server'
 import { connectToDB } from './utils'
-import { User } from './models'
+import { Post, User } from './models'
 import { revalidatePath } from 'next/cache'
 import { signIn, signOut } from './auth'
 import bcrypt from 'bcryptjs'

@@ -30,13 +30,11 @@ export const authConfig = {
             
             return session
         },
-       authorized({auth, request}){
+       authorized({auth, request, }){
         const user = auth?.user;
-        // const user = true;
         const isOnAdminPanel = request.nextUrl?.pathname.startsWith("/admin");
         const isOnBlogPage = request.nextUrl?.pathname.startsWith("/blog");
         const isOnLoginPage = request.nextUrl?.pathname.startsWith("/login");
-  
         // ONLY ADMIN CAN REACH THE ADMIN DASHBOARD
         if (isOnAdminPanel && !user?.isAdmin) {
           return false;
