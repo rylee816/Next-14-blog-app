@@ -1,0 +1,60 @@
+.adminPostForm {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+.adminPost {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    height: 400px;
+    width: 600px;
+}
+
+.input,
+.textarea {
+    width: 100%;
+    padding: 1rem;
+    outline: none;
+    border: none;
+    border-radius: 5px;
+    background-color: rgba(71, 57, 57, 0.258);
+    color: var(--text);
+    resize: none;
+}
+.input:-webkit-autofill,
+.input:-webkit-autofill:focus {
+    transition: background-color 0s 600000s, color 0s 600000s !important;
+}
+
+.textarea {
+    height: 200px;
+    width: 100%;
+}
+
+.submitBtn {
+    display: flex;
+    flex: 1;
+    width: 100%;
+}
+
+.btn {
+    display: flex;
+    flex: 1;
+    height: 50px;
+    justify-content: center;
+    align-items: center;
+    outline: none;
+    border: none;
+    border-radius: 5px;
+    background-color: var(--btn);
+    padding: 0.8rem;
+    color: var(--text);
+    font-weight: bold;
+    cursor: pointer;
+}

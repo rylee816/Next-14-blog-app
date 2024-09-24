@@ -3,6 +3,7 @@
     display: flex;
     flex-direction: column;
     gap: 100px;
+    flex-wrap: wrap;
   }
   
   .row {
@@ -17,6 +18,7 @@
   
   .col {
     flex: 1;
+    min-width: 600px;
   }
   
   .col  img {
@@ -27,6 +29,12 @@
   .line{
     margin: 100px;
     color: var(--bgSoft)
+  }
+
+  @media (max-width: 1500px) {
+    .container {
+      flex-direction: column;
+    }
   }
   
   @media (max-width: 768px) {

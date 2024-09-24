@@ -27,6 +27,10 @@
     min-width: 700px;
 }
 
+.textContainer > p {
+    line-height: 30px;
+}
+
 .text > p {
     margin-bottom: 1rem;
 }
