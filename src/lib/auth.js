@@ -15,7 +15,7 @@ export const login = async (credentials) => {
             throw new Error('Incorrect username or password. Please try again')
         }
         const validatedPassword = await bcrypt.compare(credentials.password, user.password)
-        console.log(validatedPassword, 'PASSSSSS')
+
         if (!validatedPassword) {
             throw new Error('Incorrect password. Please try again')
         }

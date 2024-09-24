@@ -7,7 +7,7 @@ import { signIn, signOut } from './auth'
 import bcrypt from 'bcryptjs'
 
 
-export const login = async (prevState, formData) => {
+export const login = async (_, formData) => {
     const { username, password } = Object.fromEntries(formData);
     try {
       await signIn("credentials", { username, password })
@@ -99,7 +99,8 @@ export const deletePost = async (formData) => {
     }
 }
 
-export const deleteUser = async (id) => {
+export const deleteUser = async (formData) => {
+    const id = formData.get("id")
     try {
         connectToDB()
         await User.findByIdAndDelete(id)
