@@ -11,7 +11,7 @@ export default async function PostCard({ post }) {
                 <div className={Styles.imageContainer}>
                     <Image
                         className={Styles.img}
-                        src={post.image || 'https://images.pexels.com/photos/3937174/pexels-photo-3937174.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2'}
+                        src={post.image}
                         alt=""
                         fill
                         sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"

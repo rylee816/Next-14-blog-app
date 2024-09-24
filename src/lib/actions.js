@@ -51,35 +51,63 @@ export const register
     }
 }
 
-export const createPost = async (formData, userId) => {
-    const { title, body, image, slug } = Object.fromEntries(formData)
+export const createPost = async (_, formData) => {
+    const { title, body, image, slug, userId } = Object.fromEntries(formData)
+    const proxyImage = 'https://images.pexels.com/photos/3937174/pexels-photo-3937174.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2';
+    
+    // Validate the image URL
+    const isValidUrl = (url) => {
+        try {
+            const parsedUrl = new URL(url);
+            return parsedUrl.protocol === 'https:' && url.includes('.');
+        } catch (err) {
+            return false;
+        }
+    };
+
+    // Use proxy image if the provided image URL is invalid
+    const imageUrl = isValidUrl(image) ? image : proxyImage;
     try {
         connectToDB()
         const newPost = new Post({
             title,
             body,
-            image: image ?? undefined,
+            image: imageUrl,
             slug,
             userId,
         })
         await newPost.save()
         console.log('Post successfully created')
         revalidatePath('/blog')
+        revalidatePath('admin')
     } catch (err) {
         console.log(err)
         return { error: 'Error creating post', status: 500 }
     }
 }
 
-export const deletePost = async (id) => {
+export const deletePost = async (formData) => {
+    const id = formData.get('id')
     try {
         connectToDB()
         await Post.findByIdAndDelete(id)
         console.log('Post successfully deleted')
-        revalidatePath('/blog')
+        revalidatePath('/admin')
     } catch (err) {
         console.log(err)
         return { error: 'Error deleting post', status: 500 }
+    }
+}
+
+export const deleteUser = async (id) => {
+    try {
+        connectToDB()
+        await User.findByIdAndDelete(id)
+        console.log('User successfully deleted')
+        revalidatePath('/admin')
+    } catch (err) {
+        console.log(err)
+        return { error: 'Error deleting user', status: 500 }
     }
 }
 

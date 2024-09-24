@@ -46,14 +46,3 @@ export const getUser = async (id) => {
         throw new Error("Error getting user")
     }
 }
-
-export const deleteUser = async (id) => {
-    try{
-        connectToDB()
-        await User.findByIdAndDelete(id)
-        return {success: true}
-    } catch(err){
-        console.log(err)
-        throw new Error("Error deleting user")
-    }
-}

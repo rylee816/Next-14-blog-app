@@ -1,3 +1,4 @@
+
 import { getPosts } from "@/lib/data";
 import Styles from "./adminPosts.module.css";
 import Image from "next/image";
@@ -8,7 +9,7 @@ const AdminPosts = async () => {
   const posts = await getPosts();
 
   return (
-    <div className={Styles.container}>
+    <div className="wrapper">
       <h1>Posts</h1>
       {posts.map((post) => (
         <div className={Styles.post} key={post.id}>
