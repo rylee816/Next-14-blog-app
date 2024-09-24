@@ -73,7 +73,7 @@ export const createPost = async (_, formData) => {
             title,
             body,
             image: imageUrl,
-            slug,
+            slug: slug.replace(' ', ''),
             userId,
         })
         await newPost.save()
