@@ -1,11 +1,10 @@
 import { Suspense } from 'react'
 import Styles from './admin.module.css'
 import AdminPosts from '@/components/adminPosts/adminPosts'
-// import AdminUsers from "@/components/adminUsers/adminUsers";
-// import AdminUserForm from "@/components/adminUserForm/adminUserForm";
 import { auth } from '@/lib/auth'
 import AdminPostForm from '@/components/adminPostForm/AdminPostForm'
 import AdminUsers from '@/components/adminUsers/AdminUsers'
+import AdminUserForm from '@/components/adminUserForm/AdminUserForm'
 
 const AdminPage = async () => {
     const session = await auth()
@@ -28,7 +27,7 @@ const AdminPage = async () => {
                         <AdminUsers />
                     </Suspense>
                 </div>
-                <div className={Styles.col}>{/* <AdminUserForm /> */}</div>
+                <div className={Styles.col}><AdminUserForm/></div>
             </div>
         </div>
     )

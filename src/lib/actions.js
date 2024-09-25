@@ -21,6 +21,30 @@ export const login = async (_, formData) => {
     }
   };
 
+  export const addUser = async (_, formData) => {
+    const {name, username, email, image, password, isAdmin} = Object.fromEntries(formData)
+    try {
+        connectToDB()
+        const salt = await bcrypt.genSalt(10)
+        const hashedPassword = await bcrypt.hash(password, salt)
+        const user = {
+            name,
+            username,
+            email,
+            image,
+            password: hashedPassword,
+            isAdmin
+        }
+        const newUser = await User.create(user)
+        await newUser.save()
+        revalidatePath('/admin')
+        console.log("Success creating new user!")
+        return {success: true}
+    } catch (err){
+        return { error: 'Error creating user', status: 500 }
+    } 
+  }
+
 export const register
  = async (_, formData) => {
     const { name, username, email, image, password, confirmPassword } =
@@ -79,7 +103,7 @@ export const createPost = async (_, formData) => {
         await newPost.save()
         console.log('Post successfully created')
         revalidatePath('/blog')
-        revalidatePath('admin')
+        revalidatePath('/admin')
     } catch (err) {
         console.log(err)
         return { error: 'Error creating post', status: 500 }
