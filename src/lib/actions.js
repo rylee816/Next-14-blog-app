@@ -128,7 +128,18 @@ export const deleteUser = async (formData) => {
     const id = formData.get("id")
     try {
         connectToDB()
-        await User.findByIdAndDelete(id)
+        const session = await User.startSession();
+        session.startTransaction();
+
+        await User.findByIdAndDelete(id).session(session)
+        await Post.find({userId: id})
+
+        await Post.deleteMany({ userId: id }).session(session);
+
+        // Commit the transaction
+        await session.commitTransaction();
+        session.endSession();
+
         console.log('User successfully deleted')
         revalidatePath('/admin')
         return {success: true}

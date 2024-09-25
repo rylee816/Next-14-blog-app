@@ -10,7 +10,7 @@ export default async function PostUser({userId}) {
         <div className={Styles.userInfo}>
             <div className={Styles.userPhoto}>
                 <Image
-                    src={user.image ? user.image : 'https://images.pexels.com/photos/3683107/pexels-photo-3683107.jpeg?auto=compress&cs=tinysrgb&w=800'}
+                    src={user?.image ? user.image : 'https://images.pexels.com/photos/3683107/pexels-photo-3683107.jpeg?auto=compress&cs=tinysrgb&w=800'}
                     alt=""
                     fill
                     sizes="100%"
@@ -18,11 +18,11 @@ export default async function PostUser({userId}) {
             </div>
             <div className={Styles.userName}>
                 <p>Author</p>
-                <h4>{user.username}</h4>
+                <h4>{user?.username}</h4>
             </div>
             <div className={Styles.date}>
                 <p>Date Posted</p>
-                <h4>{new Date(Date.parse(user.createdAt)).toLocaleDateString('en-US')}</h4>
+                <h4>{new Date(Date.parse(user?.createdAt)).toLocaleDateString('en-US')}</h4>
             </div>
         </div>
     )
