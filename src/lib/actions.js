@@ -104,6 +104,7 @@ export const createPost = async (_, formData) => {
         console.log('Post successfully created')
         revalidatePath('/blog')
         revalidatePath('/admin')
+        return {success: true, message: 'Post successfully created!'}
     } catch (err) {
         console.log(err)
         return { error: 'Error creating post', status: 500 }
@@ -130,6 +131,7 @@ export const deleteUser = async (formData) => {
         await User.findByIdAndDelete(id)
         console.log('User successfully deleted')
         revalidatePath('/admin')
+        return {success: true}
     } catch (err) {
         console.log(err)
         return { error: 'Error deleting user', status: 500 }

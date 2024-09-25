@@ -2,8 +2,9 @@
 import { getUsers } from "@/lib/data";
 import Styles from "./adminUsers.module.css";
 import Image from "next/image";
-import { deletePost, deleteUser } from "@/lib/actions";
+import { deleteUser } from "@/lib/actions";
 import Link from "next/link";
+
 
 const AdminUsers = async () => {
   const users = await getUsers();

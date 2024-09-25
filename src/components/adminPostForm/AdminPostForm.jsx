@@ -3,9 +3,15 @@ import { createPost } from '@/lib/actions'
 import React from 'react'
 import { useFormState } from 'react-dom'
 import Styles from './adminPostForm.module.css'
+import { useEffect } from 'react'
+import toast from 'react-hot-toast'
 
 export default function AdminPostForm({ userId }) {
-    const [_, formAction] = useFormState(createPost, undefined)
+    const [state, formAction] = useFormState(createPost, undefined)
+
+    useEffect(() => {
+        state?.success && toast.success(state.message)
+    },[state])
 
     return (
         <div className={Styles.adminPostForm}>

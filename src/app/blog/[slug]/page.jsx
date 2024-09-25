@@ -25,6 +25,9 @@ export const generateMetadata = async ({params}) => {
 export default async function ViewPost({ params }) {
     const { slug } = params
     const post = await getPost(slug)
+    const formattedBody = post.body.split('\n').map((line, index) => (
+        <p key={index}>{line}</p>
+      ));
     return (
         <div className={`wrapper ${Styles.viewPost}`}>
             <div className={Styles.imgContainer}>
@@ -39,7 +42,10 @@ export default async function ViewPost({ params }) {
                 <Suspense fallback={"...Loading"}>
                     <PostUser userId={post?.userId} />
                 </Suspense>
-                <p className={Styles.text}>{post?.body}</p>
+    
+                {/* <p className={Styles.text}>{post?.body}</p>
+                 */}
+                 {formattedBody}
             </div>
         </div>
     )
