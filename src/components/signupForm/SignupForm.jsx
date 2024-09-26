@@ -1,23 +1,32 @@
 'use client'
-import React, {useEffect} from 'react'
+import React, { useEffect, useRef } from 'react'
 import Styles from './signupForm.module.css'
 import { register } from '@/lib/actions'
 import { useRouter } from 'next/navigation'
-import {useFormState} from 'react-dom'
+import { useFormState } from 'react-dom'
 import Link from 'next/link'
-
+import toast from 'react-hot-toast'
 
 export default function SignupForm() {
     const [state, formAction] = useFormState(register, undefined)
     const router = useRouter()
+    const ref = useRef()
 
     useEffect(() => {
+        state?.success && toast.success(state?.message)
         state?.success && router.push('/login')
     }, [state?.success, router])
 
     return (
         <div className={Styles.signup}>
-            <form className={Styles.signupForm} action={formAction}>
+            <form
+                className={Styles.signupForm}
+                ref={ref}
+                action={(formData) => {
+                    formAction(formData)
+                    ref.current?.reset()
+                }}
+            >
                 <input
                     className={Styles.input}
                     type="text"
@@ -65,17 +74,15 @@ export default function SignupForm() {
                     placeholder="Confirm Password (Must match password)"
                     required
                 />
-                <div className={Styles.error}>
-                {state?.error}
+                <div className={Styles.error}>{state?.error}</div>
+                <div className={Styles.submitBtn}>
+                    <button className={Styles.btn}>Register</button>
                 </div>
-            <div className={Styles.submitBtn}>
-                <button className={Styles.btn}>
-                    Register
-                </button>
-            </div>
-            <div className={Styles.login}>
-                <Link href="/login">Already have an account? <b>Log in!</b></Link>
-            </div>
+                <div className={Styles.login}>
+                    <Link href="/login">
+                        Already have an account? <b>Log in!</b>
+                    </Link>
+                </div>
             </form>
         </div>
     )

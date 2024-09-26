@@ -6,9 +6,11 @@ import { useRouter } from 'next/navigation'
 import { useFormState } from 'react-dom'
 import Link from 'next/link'
 import { toast } from 'react-hot-toast'
+import { useRef } from 'react'
 
 export default function AdminUserForm() {
     const [state, formAction] = useFormState(addUser, undefined)
+    const ref = useRef()
 
     useEffect(() => {
         state?.success && toast.success('Success creating new user!')
@@ -16,7 +18,14 @@ export default function AdminUserForm() {
 
     return (
         <div className={Styles.signup}>
-            <form className={Styles.signupForm} action={formAction}>
+            <form
+                className={Styles.signupForm}
+                ref={ref}
+                action={(formData) => {
+                    formAction(formData)
+                    ref.current?.reset()
+                }}
+            >
                 <input
                     className={Styles.input}
                     type="text"

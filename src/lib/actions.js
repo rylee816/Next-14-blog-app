@@ -68,7 +68,7 @@ export const register
         const newUser = new User({ name, username, email, image, password: hashedPassword })
         await newUser.save()
         console.log('User successfully created')
-        return {success: true}
+        return {success: true, message: 'Registration Successful! Please log in.'}
     } catch (err) {
         console.log(err)
         return { error: 'Error creating user', status: 500 }
