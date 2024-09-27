@@ -20,8 +20,10 @@ export default function AdminPostForm({ userId }) {
                 className={Styles.adminPost}
                 ref={ref}
                 action={(formData) => {
-                    formAction(formData)
-                    ref.current?.reset()
+                    // Append userId to formData before sending it to the server
+                    formData.append('userId', userId);
+                    formAction(formData);
+                    ref.current?.reset();
                 }}
             >
                 <input
@@ -41,12 +43,6 @@ export default function AdminPostForm({ userId }) {
                     type="text"
                     name="image"
                     placeholder="Image"
-                />
-                <input
-                    className={Styles.input}
-                    type="hidden"
-                    name="userId"
-                    value={userId}
                 />
                 <textarea
                     className={Styles.input}
