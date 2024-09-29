@@ -1,5 +1,4 @@
-import { User } from "./models"
-import { connectToDB } from "./utils"
+
 
 export const authConfig = {
     providers: [],
