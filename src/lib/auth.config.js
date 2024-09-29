@@ -7,25 +7,33 @@ export const authConfig = {
         signIn: '/login'
     },
     callbacks: {
-      async jwt({ token, user }) {
-        if (user) {
-            // Fetch user data from DB only on first login
-            connectToDB();
-            const dbUser = await User.findOne({ email: user.email });
+    //   async jwt({ token, user }) {
+    //     if (user) {
+    //         // Fetch user data from DB only on first login
+    //         connectToDB();
+    //         const dbUser = await User.findOne({ email: user.email });
             
-            if (dbUser) {
-                token.id = dbUser.id;
-                token.isAdmin = dbUser.isAdmin;
-                token.username = dbUser.username;  // Store username in token
-            }
-        }
-        return token;
-    },
+    //         if (dbUser) {
+    //             token.id = dbUser.id;
+    //             token.isAdmin = dbUser.isAdmin;
+    //             token.username = dbUser.username;  // Store username in token
+    //         }
+    //     }
+    //     return token;
+    // },
+    async jwt({ token, user }) {
+      if (user) {
+          if (user) {
+              token.id = user.id;
+              token.isAdmin = user.isAdmin;
+          }
+      }
+      return token;
+  },
         async session({session, token}){
             if(token){
                 session.user.id = token.id
                 session.user.isAdmin = token.isAdmin
-                session.user.username = token.username
             }
             
             return session
